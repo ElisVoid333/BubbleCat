@@ -373,6 +373,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 4
   jumpForce: 350
+  DashForce: 0
+  dashForce: 10
+  dashingTime: 0.5
+  dashingCooldown: 0.3
 --- !u!1 &1195263480
 GameObject:
   m_ObjectHideFlags: 0

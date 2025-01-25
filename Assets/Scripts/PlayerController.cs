@@ -10,10 +10,22 @@ public class PlayerController : MonoBehaviour
 
     //Movement Variables
     private Rigidbody2D rb;
+
     private float horizontal;
-    private bool isFlipped = false;
+    [Header("Movement Variables")]
     [SerializeField] private float movementSpeed;
     [SerializeField] private float jumpForce;
+    [SerializeField] private float DashForce;
+
+    private bool canDash = true;
+    private bool isDashing;
+    [Header("Dash Variables")]
+    [SerializeField] private float dashForce;
+    [SerializeField] private float dashingTime = 0.2f;
+    [SerializeField] private float dashingCooldown = 1f;
+
+    private bool isFlipped = false;
+
 
     void Start()
     {
@@ -21,24 +33,24 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Update()
-    {
+    { 
         //Movement 
         horizontal = Input.GetAxisRaw("Horizontal");
       
         //Jump
         if (Input.GetKeyDown(KeyCode.W) && stamina > 0)
         {
-            Debug.Log("Jumping");
+            //Debug.Log("Jumping");
             rb.AddForce(new Vector2(0f, jumpForce));
             stamina -= 1;
         }   
       
         //Dash
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl) && canDash)
         {
             Debug.Log("Dashing");
-
-            stamina -= 1;
+            StartCoroutine(Dash());
+            stamina -=1;
         }
 
         //Player facing direction
@@ -63,13 +75,40 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (isDashing)
+        {
+            return;
+        }
+
         rb.velocity = new Vector2(horizontal * movementSpeed, rb.velocity.y);
     }
 
     /* FUNCTIONS */
     //Player dashes in direction it is facing
-    private void Dash()
+    private IEnumerator Dash()
     {
-        Debug.Log("Dashing");
+        canDash = false;
+        isDashing = true;
+
+        float originalGravity = rb.gravityScale;
+
+        rb.gravityScale = 0f;
+
+        if (isFlipped)
+        {
+            rb.velocity = new Vector2(-transform.localScale.x * dashForce, 0f);
+        }
+        else 
+        { 
+            rb.velocity = new Vector2(transform.localScale.x * dashForce, 0f);
+        }
+
+        yield return new WaitForSeconds(dashingTime);
+
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
     }
 }
