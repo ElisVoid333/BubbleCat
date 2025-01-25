@@ -16,23 +16,29 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private float DashForce;
     private float horizontal;
+    private bool isFlipped = false;
 
-    [Header("Attack Variables")]
+    //Attack Variables
+    private bool isAttacking;
+    [Header("Light Attack Variables")]
     [SerializeField] public int damage;
     [SerializeField] private GameObject scratch;
+    [SerializeField] private float lightAttackTime;
+    [SerializeField] private float lightAttackCooldown;
+
+    [Header("Range Attack Variables")]
     [SerializeField] private GameObject bubble;
     [SerializeField] private float bubbleForce;
     [SerializeField] private float bubbleOffSet;
-    private bool isAttacking;
+    [SerializeField] private float rangeAttackTime;
+    [SerializeField] private float rangeAttackCooldown;
 
     [Header("Dash Variables")]
     [SerializeField] private float dashForce;
-    [SerializeField] private float dashingTime = 0.2f;
-    [SerializeField] private float dashingCooldown = 1f;
+    [SerializeField] private float dashingTime;
+    [SerializeField] private float dashingCooldown;
     private bool canDash = true;
     private bool isDashing;
-
-    private bool isFlipped = false;
 
 
     void Start()
@@ -60,12 +66,12 @@ public class PlayerController : MonoBehaviour
         }
 
         //Player facing direction
-        if (canDash) { 
-            if (Input.GetKeyDown(KeyCode.D))
+        if (!isDashing || !isAttacking) { 
+            if (Input.GetKey(KeyCode.D))
             {
                 isFlipped = false;
             }
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKey(KeyCode.A))
             {
                 isFlipped = true;
             }
@@ -89,17 +95,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(1) && canDash)
         {
-            Debug.Log("Range Attack");
-            if (isFlipped)
-            {
-                GameObject newBubble = Instantiate(bubble, new Vector2(this.transform.position.x-bubbleOffSet, this.transform.position.y), Quaternion.identity);
-                newBubble.GetComponent<Rigidbody2D>().AddForce(new Vector2(-bubbleForce, 0f));
-            }
-            else
-            {
-                GameObject newBubble = Instantiate(bubble, new Vector2(this.transform.position.x + bubbleOffSet, this.transform.position.y), Quaternion.identity);
-                newBubble.GetComponent<Rigidbody2D>().AddForce(new Vector2(bubbleForce, 0f));
-            }
+            StartCoroutine(rangeAttack());
         }
     }
 
@@ -152,16 +148,43 @@ public class PlayerController : MonoBehaviour
 
         scratch.SetActive(true);
 
-        yield return new WaitForSeconds(dashingTime);
+        yield return new WaitForSeconds(lightAttackTime);
         
         scratch.SetActive(false);
         isAttacking = false;
 
-        yield return new WaitForSeconds(dashingCooldown);
+        yield return new WaitForSeconds(lightAttackCooldown);
         canDash = true;
     }
 
     //Range Attack
+    private IEnumerator rangeAttack()
+    {
+        canDash = false;
+        isAttacking= true;
+
+        rb.velocity = new Vector3(0f, 0f, 0f);
+
+        if (isFlipped)
+        {
+            GameObject newBubble = Instantiate(bubble, new Vector2(this.transform.position.x - bubbleOffSet, this.transform.position.y), Quaternion.identity);
+            newBubble.GetComponent<Rigidbody2D>().AddForce(new Vector2(-bubbleForce, 0f));
+        }
+        else
+        {
+            GameObject newBubble = Instantiate(bubble, new Vector2(this.transform.position.x + bubbleOffSet, this.transform.position.y), Quaternion.identity);
+            newBubble.GetComponent<Rigidbody2D>().AddForce(new Vector2(bubbleForce, 0f));
+        }
+
+        yield return new WaitForSeconds(rangeAttackTime);
+
+        isAttacking = false;
+
+        yield return new WaitForSeconds(rangeAttackCooldown);
+        canDash = true;
+
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
