@@ -8,6 +8,20 @@ public class PlayerController : MonoBehaviour
     private int health = 6;
     private int stamina = 5;
     public Animator animator;
+    [Header("Health Hearts")]
+    [SerializeField] private GameObject HealthHalf1;
+    [SerializeField] private GameObject HealthHalf2;
+    [SerializeField] private GameObject HealthHalf3;
+    [SerializeField] private GameObject HealthHalf4;
+    [SerializeField] private GameObject HealthHalf5;
+    [SerializeField] private GameObject HealthHalf6;
+
+    [Header("Stamina Bubbles")]
+    [SerializeField] private GameObject bubble1;
+    [SerializeField] private GameObject bubble2;
+    [SerializeField] private GameObject bubble3;
+    [SerializeField] private GameObject bubble4;
+    [SerializeField] private GameObject bubble5;
 
     //Movement Variables
     private Rigidbody2D rb;
@@ -32,6 +46,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float bubbleOffSet;
     [SerializeField] private float rangeAttackTime;
     [SerializeField] private float rangeAttackCooldown;
+    [SerializeField] private AudioClip rangeAttackSound;
 
     [Header("Dash Variables")]
     [SerializeField] private float dashForce;
@@ -45,6 +60,8 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         scratch.SetActive(false);
+
+        rangeAttackSound = GetComponent<AudioClip>(); 
     }
 
     private void Update()
@@ -101,6 +118,39 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Range Attack");
             StartCoroutine(rangeAttack());
         }
+
+        /*-- HUD Changes --*/
+        //Stamina
+        if (stamina == 5)
+        {
+            bubble1.SetActive(true);
+            bubble2.SetActive(true);
+            bubble3.SetActive(true);
+            bubble4.SetActive(true);
+            bubble5.SetActive(true);
+        }
+        else if (stamina == 4)
+        {
+            bubble5.SetActive(false);
+        }
+        else if (stamina == 3)
+        {
+            bubble4.SetActive(false);
+        }
+        else if (stamina == 2)
+        {
+            bubble3.SetActive(false);
+        }
+        else if (stamina == 1)
+        {
+            bubble2.SetActive(false);
+        }
+        else if (stamina == 0)
+        {
+            bubble1.SetActive(false);
+        }
+
+        //Health
     }
 
     void FixedUpdate()
@@ -189,8 +239,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(rangeAttackCooldown);
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Floor")
         {

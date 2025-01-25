@@ -5,11 +5,11 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public GameObject player;
-    private float offset = 0f;
+    public float offset;
 
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10f);
+        this.gameObject.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + offset, -10f);
     }
 }
