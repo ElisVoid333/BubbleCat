@@ -11,6 +11,8 @@ public class AttackIndicatorSquare : MonoBehaviour
     [SerializeField] float AttackSpeed;
     [Range(0, 1)] public float size;
 
+    [SerializeField] GameObject AttackPrefab;
+
     
     float currentTime = 0;
     
