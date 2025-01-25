@@ -25,17 +25,21 @@ public class PlayerController : MonoBehaviour
         //Movement 
         horizontal = Input.GetAxisRaw("Horizontal");
       
-        if (Input.GetKeyDown(KeyCode.W))
+        //Jump
+        if (Input.GetKeyDown(KeyCode.W) && stamina > 0)
         {
             Debug.Log("Jumping");
             rb.AddForce(new Vector2(0f, jumpForce));
-
+            stamina -= 1;
         }   
-        /*
+      
+        //Dash
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-           
-        }*/
+            Debug.Log("Dashing");
+
+            stamina -= 1;
+        }
 
         //Player facing direction
         if (Input.GetKeyDown(KeyCode.D))
