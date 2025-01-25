@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Player facing direction
-        if (!isDashing || !isAttacking) { 
+        if (!isDashing) {
             if (Input.GetKey(KeyCode.D))
             {
                 isFlipped = false;
@@ -144,14 +144,12 @@ public class PlayerController : MonoBehaviour
     private IEnumerator lightAttack()
     {
         canDash = false;
-        isAttacking = true;
 
         scratch.SetActive(true);
 
         yield return new WaitForSeconds(lightAttackTime);
         
         scratch.SetActive(false);
-        isAttacking = false;
 
         yield return new WaitForSeconds(lightAttackCooldown);
         canDash = true;
@@ -179,10 +177,9 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(rangeAttackTime);
 
         isAttacking = false;
-
-        yield return new WaitForSeconds(rangeAttackCooldown);
         canDash = true;
 
+        yield return new WaitForSeconds(rangeAttackCooldown);
     }
 
 
