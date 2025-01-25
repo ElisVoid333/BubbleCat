@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     //Character Variables
     private int health = 6;
     private int stamina = 5;
+    private SpriteRenderer sprite;
+    public Animator animator;
 
     //Movement Variables
     private Rigidbody2D rb;
@@ -43,6 +45,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        //sprite = GetComponent<SpriteRenderer>();
         scratch.SetActive(false);
     }
 
@@ -59,7 +62,7 @@ public class PlayerController : MonoBehaviour
         //Dash
         if (Input.GetKeyDown(KeyCode.LeftControl) && canDash && stamina > 0)
         {
-            Debug.Log("Dashing");
+            //Debug.Log("Dashing");
             StartCoroutine(Dash());
             stamina -= 1;
         }
@@ -77,23 +80,28 @@ public class PlayerController : MonoBehaviour
 
             if (isFlipped)
             {
-                this.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+                Debug.Log("Is flipped");
+                this.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+                //sprite.flipX = true;
             }
-            else if (!isFlipped)
+            if (!isFlipped)
             {
-                this.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                Debug.Log("Not Flipped");
+                this.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                //sprite.flipX = false;
             }
         }
 
         /*-- Attack --*/
         if (Input.GetMouseButtonDown(0) && canDash)
         {
-            Debug.Log("Light Attack");
+            //Debug.Log("Light Attack");
             StartCoroutine(lightAttack());
             
         }
         if (Input.GetMouseButtonDown(1) && canDash)
         {
+            //Debug.Log("Range Attack");
             StartCoroutine(rangeAttack());
         }
     }
@@ -104,7 +112,8 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-                /*-- Movement --*/
+
+        /*-- Movement --*/
         horizontal = Input.GetAxisRaw("Horizontal");
 
         rb.velocity = new Vector2(horizontal * movementSpeed, rb.velocity.y);
@@ -186,7 +195,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Floor")
         {
-            Debug.Log("On the ground");
+            //Debug.Log("On the ground");
             stamina = 5;
         }
     }
