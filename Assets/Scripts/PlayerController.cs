@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
     //Character Variables
     private int health = 6;
     private int stamina = 5;
-    private SpriteRenderer sprite;
     public Animator animator;
 
     //Movement Variables
@@ -45,7 +44,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //sprite = GetComponent<SpriteRenderer>();
         scratch.SetActive(false);
     }
 
@@ -80,15 +78,13 @@ public class PlayerController : MonoBehaviour
 
             if (isFlipped)
             {
-                Debug.Log("Is flipped");
+                //Debug.Log("Is flipped");
                 this.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
-                //sprite.flipX = true;
             }
             if (!isFlipped)
             {
-                Debug.Log("Not Flipped");
+                //Debug.Log("Not Flipped");
                 this.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-                //sprite.flipX = false;
             }
         }
 
