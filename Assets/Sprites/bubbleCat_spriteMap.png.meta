@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,7 +121,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bubbleCat_spriteMap_tail
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1398
+        width: 874
+        height: 1565
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f20b52def7d850242ba3a483e8bbfccc
+      internalID: -1798442424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubbleCat_spriteMap_body
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 1498
+        width: 2350
+        height: 1506
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a0809f4a31a1374799367ba2ebde56e
+      internalID: 863140592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubbleCat_spriteMap_3
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 1675
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1005c5078a5e1fa4887cd32e10484c3a
+      internalID: 1856143188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubbleCat_spriteMap_rbLeg
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 71
+        width: 794
+        height: 1386
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0a1f5aaf8693ee48a96ab379f53c86a
+      internalID: 456695543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubbleCat_spriteMap_rfLeg
+      rect:
+        serializedVersion: 2
+        x: 2642
+        y: 67
+        width: 370
+        height: 928
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3edddedbd8c4cec4e9cab2b978c312fb
+      internalID: 985742443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubbleCat_spriteMap_lfLeg
+      rect:
+        serializedVersion: 2
+        x: 3243
+        y: 51
+        width: 518
+        height: 975
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1309bad6b7ca3604ab435a08a1dcb4ff
+      internalID: 481412350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubbleCat_spriteMap_lbLeg
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 61
+        width: 538
+        height: 838
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b61ef0d79d91c5f47be1191b3ed95abe
+      internalID: -793426922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +279,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bubbleCat_spriteMap_1: -1804717631
+      bubbleCat_spriteMap_10: 560292994
+      bubbleCat_spriteMap_11: 272210544
+      bubbleCat_spriteMap_12: -473958610
+      bubbleCat_spriteMap_13: -996297536
+      bubbleCat_spriteMap_14: 572947717
+      bubbleCat_spriteMap_15: -1413288900
+      bubbleCat_spriteMap_16: -881717698
+      bubbleCat_spriteMap_17: 1476257705
+      bubbleCat_spriteMap_18: -2124603517
+      bubbleCat_spriteMap_19: 1721878865
+      bubbleCat_spriteMap_20: 1438214652
+      bubbleCat_spriteMap_24: -184033137
+      bubbleCat_spriteMap_25: 1239265709
+      bubbleCat_spriteMap_26: -2023497135
+      bubbleCat_spriteMap_3: 1856143188
+      bubbleCat_spriteMap_5: -1640270536
+      bubbleCat_spriteMap_6: 1209100235
+      bubbleCat_spriteMap_7: -484855627
+      bubbleCat_spriteMap_8: -1371446947
+      bubbleCat_spriteMap_9: 1089402106
+      bubbleCat_spriteMap_body: 863140592
+      bubbleCat_spriteMap_lbLeg: -793426922
+      bubbleCat_spriteMap_lfLeg: 481412350
+      bubbleCat_spriteMap_rbLeg: 456695543
+      bubbleCat_spriteMap_rfLeg: 985742443
+      bubbleCat_spriteMap_tail: -1798442424
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
