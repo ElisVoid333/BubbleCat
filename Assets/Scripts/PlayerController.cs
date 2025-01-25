@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     [Header("Movement Variables")]
     [SerializeField] private float movementSpeed;
     [SerializeField] private float jumpForce;
-    [SerializeField] private float DashForce;
     private float horizontal;
     private bool isFlipped = false;
 
