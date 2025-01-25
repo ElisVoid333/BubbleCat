@@ -7,6 +7,21 @@ public class PlayerController : MonoBehaviour
     //Character Variables
     private int health = 6;
     private int stamina = 5;
+    public Animator animator;
+    [Header("Health Hearts")]
+    [SerializeField] private GameObject HealthHalf1;
+    [SerializeField] private GameObject HealthHalf2;
+    [SerializeField] private GameObject HealthHalf3;
+    [SerializeField] private GameObject HealthHalf4;
+    [SerializeField] private GameObject HealthHalf5;
+    [SerializeField] private GameObject HealthHalf6;
+
+    [Header("Stamina Bubbles")]
+    [SerializeField] private GameObject bubble1;
+    [SerializeField] private GameObject bubble2;
+    [SerializeField] private GameObject bubble3;
+    [SerializeField] private GameObject bubble4;
+    [SerializeField] private GameObject bubble5;
 
     //Movement Variables
     private Rigidbody2D rb;
@@ -31,6 +46,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float bubbleOffSet;
     [SerializeField] private float rangeAttackTime;
     [SerializeField] private float rangeAttackCooldown;
+    [SerializeField] private AudioClip rangeAttackSound;
 
     [Header("Dash Variables")]
     [SerializeField] private float dashForce;
@@ -44,6 +60,8 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         scratch.SetActive(false);
+
+        rangeAttackSound = GetComponent<AudioClip>(); 
     }
 
     private void Update()
@@ -52,6 +70,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) && stamina > 0)
         {
             //Debug.Log("Jumping");
+            animator.SetBool("Jumping", true);
             rb.AddForce(new Vector2(0f, jumpForce));
             stamina -= 1;
         }
@@ -59,7 +78,7 @@ public class PlayerController : MonoBehaviour
         //Dash
         if (Input.GetKeyDown(KeyCode.LeftControl) && canDash && stamina > 0)
         {
-            Debug.Log("Dashing");
+            //Debug.Log("Dashing");
             StartCoroutine(Dash());
             stamina -= 1;
         }
@@ -77,25 +96,61 @@ public class PlayerController : MonoBehaviour
 
             if (isFlipped)
             {
-                this.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+                //Debug.Log("Is flipped");
+                this.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
             }
-            else if (!isFlipped)
+            if (!isFlipped)
             {
-                this.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                //Debug.Log("Not Flipped");
+                this.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             }
         }
 
         /*-- Attack --*/
         if (Input.GetMouseButtonDown(0) && canDash)
         {
-            Debug.Log("Light Attack");
+            //Debug.Log("Light Attack");
             StartCoroutine(lightAttack());
             
         }
         if (Input.GetMouseButtonDown(1) && canDash)
         {
+            //Debug.Log("Range Attack");
             StartCoroutine(rangeAttack());
         }
+
+        /*-- HUD Changes --*/
+        //Stamina
+        if (stamina == 5)
+        {
+            bubble1.SetActive(true);
+            bubble2.SetActive(true);
+            bubble3.SetActive(true);
+            bubble4.SetActive(true);
+            bubble5.SetActive(true);
+        }
+        else if (stamina == 4)
+        {
+            bubble5.SetActive(false);
+        }
+        else if (stamina == 3)
+        {
+            bubble4.SetActive(false);
+        }
+        else if (stamina == 2)
+        {
+            bubble3.SetActive(false);
+        }
+        else if (stamina == 1)
+        {
+            bubble2.SetActive(false);
+        }
+        else if (stamina == 0)
+        {
+            bubble1.SetActive(false);
+        }
+
+        //Health
     }
 
     void FixedUpdate()
@@ -104,8 +159,11 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-                /*-- Movement --*/
+
+        /*-- Movement --*/
         horizontal = Input.GetAxisRaw("Horizontal");
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
         rb.velocity = new Vector2(horizontal * movementSpeed, rb.velocity.y);
     }
@@ -181,13 +239,13 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(rangeAttackCooldown);
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Floor")
         {
-            Debug.Log("On the ground");
+            //Debug.Log("On the ground");
             stamina = 5;
+            animator.SetBool("Jumping", false);
         }
     }
 }
