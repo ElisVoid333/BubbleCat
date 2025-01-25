@@ -25,8 +25,10 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W))
         {
+            Debug.Log("Jumping");
             rb.AddForce(new Vector2(0f, jumpForce));
-        }
+
+        }   
 
 
     }
