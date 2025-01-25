@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5c96e496994cf754aa838a88d0f4e2fa
+guid: ea66ab35a36fe9e42b2f7d2257374e63
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 550
+  spritePixelsToUnits: 400
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,32 +69,6 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -120,7 +94,33 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SandTileMap_3
+      name: corals_10
       rect:
         serializedVersion: 2
-        x: 69
-        y: 763
-        width: 563
-        height: 705
+        x: 2436
+        y: 1158
+        width: 418
+        height: 1076
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25b742a6b7b24234c8968e411410596f
-      internalID: -599337956
+      spriteID: e8d9729900bf6f64180096bec51e1f27
+      internalID: 1035999215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SandTileMap_4
+      name: corals_11
       rect:
         serializedVersion: 2
-        x: 1343
-        y: 758
-        width: 2067
-        height: 707
+        x: 336
+        y: 802
+        width: 850
+        height: 1288
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: baadc84989247f1478b56ac607a54e63
-      internalID: 1812229804
+      spriteID: 1c8a8ae58c4b0d5449b43344eb77b089
+      internalID: -874400785
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SandTileMap_5
+      name: corals_14
       rect:
         serializedVersion: 2
-        x: 4036
-        y: 772
-        width: 567
-        height: 698
+        x: 1866
+        y: 1147
+        width: 377
+        height: 1053
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a94b837a9933d848aaebd2557163dbe
-      internalID: -1164032471
+      spriteID: 3f5df839cc1ac3846b5bc1b88563ae58
+      internalID: -1399742323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SandTileMap_0
+      name: corals_17
       rect:
         serializedVersion: 2
-        x: 73
-        y: 121
-        width: 558
-        height: 642
+        x: 1342
+        y: 917
+        width: 298
+        height: 1164
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88cbdd1557bdcc24789faabb3d3e72f4
-      internalID: -659444857
+      spriteID: 808d5ad8e095e0f4cbb2720ead5c92e3
+      internalID: 1900899248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SandTileMap_1
+      name: corals_23
       rect:
         serializedVersion: 2
-        x: 1353
-        y: 122
-        width: 2064
-        height: 631
+        x: 1758
+        y: 718
+        width: 324
+        height: 240
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bea9f6a993998c842881862b8a63a58c
-      internalID: 460536543
+      spriteID: b7bbc73f170825d4992abd3a476e3e17
+      internalID: 1263354583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SandTileMap_2
+      name: corals_35
       rect:
         serializedVersion: 2
-        x: 4034
-        y: 109
-        width: 569
-        height: 663
+        x: 2267
+        y: 303
+        width: 667
+        height: 559
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,8 +255,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13848863d235c3f48b7ed7ee8d154b75
-      internalID: -1008282247
+      spriteID: d527192cefe72b04d8acbd6fc895ee68
+      internalID: -555965038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: corals_39
+      rect:
+        serializedVersion: 2
+        x: 1381
+        y: 248
+        width: 237
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d480b9f21a15b234dbf844f268f6b6b9
+      internalID: 1896776087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: corals_41
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 298
+        width: 96
+        height: 243
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f49b147851615149a657f8bb117f01f
+      internalID: 197973369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: corals_42
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 267
+        width: 149
+        height: 347
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba481e03ea072e4c82a543b9dbbf589
+      internalID: 1049025027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: corals_43
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 285
+        width: 113
+        height: 276
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62770e4417507d2489f4dde5aa54565c
+      internalID: 2060940197
       vertices: []
       indices: 
       edges: []
@@ -272,67 +356,62 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SandTileMap_0: -659444857
-      SandTileMap_1: 460536543
-      SandTileMap_10: -1791591014
-      SandTileMap_11: 1342032896
-      SandTileMap_12: 1315223373
-      SandTileMap_13: -317981481
-      SandTileMap_14: -1938772140
-      SandTileMap_15: -562039390
-      SandTileMap_16: 1524866325
-      SandTileMap_17: 1264595723
-      SandTileMap_18: -46497489
-      SandTileMap_19: -2024789869
-      SandTileMap_2: -1008282247
-      SandTileMap_20: 488165176
-      SandTileMap_21: -1641849359
-      SandTileMap_22: 1628867746
-      SandTileMap_23: 1183821039
-      SandTileMap_24: -1516217760
-      SandTileMap_25: -1647484294
-      SandTileMap_26: 950757065
-      SandTileMap_27: 1533312893
-      SandTileMap_28: 1468958030
-      SandTileMap_29: 1985235172
-      SandTileMap_3: -599337956
-      SandTileMap_30: 726940060
-      SandTileMap_31: 1993731347
-      SandTileMap_32: -240263062
-      SandTileMap_33: 2141288388
-      SandTileMap_34: -2052888652
-      SandTileMap_35: -1234837138
-      SandTileMap_36: 5086295
-      SandTileMap_37: -653286608
-      SandTileMap_38: -1203098611
-      SandTileMap_39: 453994613
-      SandTileMap_4: 1812229804
-      SandTileMap_40: 1136105018
-      SandTileMap_41: -1475051114
-      SandTileMap_42: -625466941
-      SandTileMap_43: 2068714627
-      SandTileMap_44: -1979484899
-      SandTileMap_45: 591470524
-      SandTileMap_46: 1368685618
-      SandTileMap_47: 1068944521
-      SandTileMap_48: -2120894054
-      SandTileMap_49: -680671290
-      SandTileMap_5: -1164032471
-      SandTileMap_50: -468118245
-      SandTileMap_51: 1756931874
-      SandTileMap_52: 219882060
-      SandTileMap_53: -1243017351
-      SandTileMap_54: -675245563
-      SandTileMap_55: 1768508373
-      SandTileMap_56: -875418454
-      SandTileMap_57: 1278063605
-      SandTileMap_58: -342698230
-      SandTileMap_59: -740699046
-      SandTileMap_6: 87291383
-      SandTileMap_60: -673121605
-      SandTileMap_7: 2096652983
-      SandTileMap_8: 111023567
-      SandTileMap_9: -461187741
+      corals_0: 1141171699
+      corals_1: -1936506972
+      corals_10: 1035999215
+      corals_11: -874400785
+      corals_12: 633725360
+      corals_13: 2119225165
+      corals_14: -1399742323
+      corals_15: 847270874
+      corals_16: -135207861
+      corals_17: 1900899248
+      corals_18: 1977746119
+      corals_19: -909992561
+      corals_2: 1096661791
+      corals_20: 1813505569
+      corals_21: -1205536631
+      corals_22: -1918189921
+      corals_23: 1263354583
+      corals_24: -1031140144
+      corals_25: 1805261500
+      corals_26: -209922625
+      corals_27: 258123893
+      corals_28: -2117942466
+      corals_29: -1172574756
+      corals_3: 1300438776
+      corals_30: -1027698787
+      corals_31: -1806871932
+      corals_32: -874287056
+      corals_33: -1943272970
+      corals_34: -1241634549
+      corals_35: -555965038
+      corals_36: -86359652
+      corals_37: 641194154
+      corals_38: 1624396314
+      corals_39: 1896776087
+      corals_4: 138845647
+      corals_40: -1812265911
+      corals_41: 197973369
+      corals_42: 1049025027
+      corals_43: 2060940197
+      corals_44: 2073890048
+      corals_45: 330363214
+      corals_46: -1429897641
+      corals_47: 876773427
+      corals_48: 806586292
+      corals_49: -690571463
+      corals_5: -1876535771
+      corals_50: 1542268978
+      corals_51: -690299751
+      corals_52: -1655892337
+      corals_53: 364768268
+      corals_54: 401485862
+      corals_55: -1717188048
+      corals_6: -1107439362
+      corals_7: 1769108405
+      corals_8: 908647869
+      corals_9: -584429752
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
