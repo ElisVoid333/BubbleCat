@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     //Movement Variables
     private Rigidbody2D rb;
     private float horizontal;
+    private bool isFlipped = false;
     [SerializeField] private float movementSpeed;
     [SerializeField] private float jumpForce;
 
@@ -21,20 +22,50 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        //Movement 
         horizontal = Input.GetAxisRaw("Horizontal");
-
+      
         if (Input.GetKeyDown(KeyCode.W))
         {
             Debug.Log("Jumping");
             rb.AddForce(new Vector2(0f, jumpForce));
 
         }   
+        /*
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+           
+        }*/
 
+        //Player facing direction
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            isFlipped = false;
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            isFlipped = true;
+        }
 
+        if (isFlipped)
+        {
+            this.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+        }
+        else if (!isFlipped)
+        {
+            this.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+        }
     }
 
     void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * movementSpeed, rb.velocity.y);
+    }
+
+    /* FUNCTIONS */
+    //Player dashes in direction it is facing
+    private void Dash()
+    {
+        Debug.Log("Dashing");
     }
 }
