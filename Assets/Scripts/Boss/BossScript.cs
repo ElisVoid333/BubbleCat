@@ -7,6 +7,8 @@ public class BossScript : MonoBehaviour
 {
     [SerializeField] float BossMaxHP;
     [SerializeField]float BossCurrentHp;
+    [SerializeField] Animator BossAnimator;
+    [SerializeField] Animator modelanimator;
     [SerializeField] Rigidbody2D RB;
     [SerializeField] Transform Player;
     
@@ -18,9 +20,11 @@ public class BossScript : MonoBehaviour
     public float Basespeed = 2.5f;
     public float Ragespeed = 2.5f;
     public LayerMask groundlayer;
-
+    public bool enraged = false;
     [SerializeField] GameObject ClawAttackPrefab;
     [SerializeField] BossHPControl HpBar;
+    public bool isInvincible=false;
+   
 
 
     // Start is called before the first frame update
@@ -46,11 +50,20 @@ public class BossScript : MonoBehaviour
         HpBar.UpdateHP(BossCurrentHp);
 
 
+        if(BossCurrentHp < (BossMaxHP / 2))
+        {
+            this.gameObject.GetComponent<Animator>().SetBool("Enraged", true);
+        }
+
+
     }
 
 
 
-    
+    public void StartFight()
+    {
+        modelanimator.SetTrigger("StartFight");
+    }
 
     public void LookAtPlayer()
     {
@@ -72,19 +85,55 @@ public class BossScript : MonoBehaviour
 
     }
 
-    public void CrabSpecial(Animator anim, int attackDirection)
+
+
+    public void startCrabSpecial()
+    {
+        isInvincible = true;
+        this.gameObject.GetComponentInChildren<Animator>().SetTrigger("CrabInvincible");
+    }
+    public void EndCrabSpecial()
+    {
+        isInvincible = false;
+        this.gameObject.GetComponentInChildren<Animator>().SetTrigger("CrabInvincible");
+    }
+
+    public void CrabSpecial(Animator anim, float attackDirection, int numberofAttack)
     {
         CanSpecialAttack = false;
-        Vector3 pos = new Vector3(0, Player.transform.position.y, 0);
-        Instantiate(ClawAttackPrefab, pos,Quaternion.identity );
+        
 
-        StartCoroutine(EndSpecialCooldown(anim));
+        StartCoroutine(startAttack(anim,numberofAttack,4));
     }
+
+
+    IEnumerator startAttack(Animator animator,int NumberOfSpecial, int speed)
+    {
+        for (int i = 0; i < NumberOfSpecial; i++)
+        {
+            Vector3 pos = new Vector3(0, Player.transform.position.y, 0);
+            Instantiate(ClawAttackPrefab, pos, Quaternion.identity);
+            yield return new WaitForSeconds(speed);
+        }
+        
+        StartCoroutine(EndSpecialCooldown(animator));
+    }
+
+
+
 
     IEnumerator EndSpecialCooldown(Animator anim)
     {
         yield return new WaitForSeconds(3);
         anim.SetTrigger("EndSpecial");
+        StartCoroutine(resetSpecial());
+    }
+
+    IEnumerator resetSpecial()
+    {
+        yield return new WaitForSeconds(10);
+        CanSpecialAttack = true;
+
     }
 
 
@@ -101,5 +150,17 @@ public class BossScript : MonoBehaviour
         public void EndspecialAttack(Animator anim)
     {
 
+    }
+
+    public bool CheckEnraged()
+    {
+        if (BossCurrentHp < (BossMaxHP / 2))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
