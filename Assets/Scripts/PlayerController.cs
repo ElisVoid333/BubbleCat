@@ -19,8 +19,10 @@ public class PlayerController : MonoBehaviour
 
     [Header("Attack Variables")]
     [SerializeField] public int damage;
-    [SerializeField] private GameObject bubble;
     [SerializeField] private GameObject scratch;
+    [SerializeField] private GameObject bubble;
+    [SerializeField] private float bubbleForce;
+    [SerializeField] private float bubbleOffSet;
     private bool isAttacking;
 
     [Header("Dash Variables")]
@@ -88,7 +90,16 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(1) && canDash)
         {
             Debug.Log("Range Attack");
-            GameObject newBubble = Instantiate(bubble);
+            if (isFlipped)
+            {
+                GameObject newBubble = Instantiate(bubble, new Vector2(this.transform.position.x-bubbleOffSet, this.transform.position.y), Quaternion.identity);
+                newBubble.GetComponent<Rigidbody2D>().AddForce(new Vector2(-bubbleForce, 0f));
+            }
+            else
+            {
+                GameObject newBubble = Instantiate(bubble, new Vector2(this.transform.position.x + bubbleOffSet, this.transform.position.y), Quaternion.identity);
+                newBubble.GetComponent<Rigidbody2D>().AddForce(new Vector2(bubbleForce, 0f));
+            }
         }
     }
 
