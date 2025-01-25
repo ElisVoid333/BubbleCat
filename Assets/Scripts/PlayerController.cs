@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) && stamina > 0)
         {
             //Debug.Log("Jumping");
+            animator.SetBool("Jumping", true);
             rb.AddForce(new Vector2(0f, jumpForce));
             stamina -= 1;
         }
@@ -111,6 +112,8 @@ public class PlayerController : MonoBehaviour
 
         /*-- Movement --*/
         horizontal = Input.GetAxisRaw("Horizontal");
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
         rb.velocity = new Vector2(horizontal * movementSpeed, rb.velocity.y);
     }
@@ -193,6 +196,7 @@ public class PlayerController : MonoBehaviour
         {
             //Debug.Log("On the ground");
             stamina = 5;
+            animator.SetBool("Jumping", false);
         }
     }
 }
