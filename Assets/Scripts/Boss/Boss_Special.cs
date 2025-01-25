@@ -7,10 +7,13 @@ public class Boss_Special : StateMachineBehaviour
 {
     Transform lastPosition;
     Rigidbody2D rigidboyd;
-    float speed = 10;
+    float speed = 4;
     Transform currentPos;
 
     BossScript boss;
+
+    [SerializeField]int NumberOfSpecial = 1;
+
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -18,7 +21,8 @@ public class Boss_Special : StateMachineBehaviour
         rigidboyd = animator.GetComponent<Rigidbody2D>();
         lastPosition = animator.gameObject.transform;
         boss = animator.GetComponent<BossScript>(); 
-        boss.CrabSpecial(animator,1);
+        boss.CrabSpecial(animator,0,NumberOfSpecial);
+        
         //currentPos.position = boss.gameObject.transform.position;
     }
 
@@ -36,6 +40,10 @@ public class Boss_Special : StateMachineBehaviour
         //boss.gameObject.transform.position = currentPos.position;
         animator.ResetTrigger("EndSpecial");
     }
+
+
+   
+
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

@@ -7,6 +7,7 @@ public class ChildAnimationEvents : MonoBehaviour
 
     [SerializeField]Animator thisanimator;
     [SerializeField]Animator StateMachine;
+    [SerializeField]Collider2D collision2D;
 
     private void Start()
     {
@@ -27,6 +28,16 @@ public class ChildAnimationEvents : MonoBehaviour
     {
 
     }
+
+    public void ActivateHitbox()
+    {
+        collision2D.gameObject.SetActive(true);
+    }
+    public void DeactivateHitbox()
+    {
+        collision2D.gameObject.SetActive(false);
+    }
+
 
 
 

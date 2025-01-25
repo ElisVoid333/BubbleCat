@@ -8,4 +8,9 @@ public class MineExplosionScript : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
+
+    public void destroyParent()
+    {
+        Destroy(this.transform.parent.gameObject);
+    }
 }

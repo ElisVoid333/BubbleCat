@@ -21,6 +21,7 @@ public class Boss_Idle : StateMachineBehaviour
 
 
         boss.LookAtPlayer();
+        
 
     }
 
