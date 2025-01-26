@@ -329,7 +329,7 @@ public class PlayerController : MonoBehaviour
         Vector3 originalScale = bubbleExplosion.transform.localScale;
 
         bubbleExplosion.SetActive(true);
-
+        bubbleExplosion.GetComponent<Collider2D>().enabled = true;
         yield return new WaitForSeconds(explodeAttackTime);
 
         bubbleExplosion.transform.localScale = originalScale;

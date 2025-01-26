@@ -515,6 +515,7 @@ GameObject:
   - component: {fileID: 3670645877147687682}
   - component: {fileID: 2519993333108806495}
   - component: {fileID: 8398769913457066724}
+  - component: {fileID: 336958247668051974}
   m_Layer: 0
   m_Name: bubbleExplosion
   m_TagString: Untagged
@@ -618,12 +619,26 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.69
+--- !u!114 &336958247668051974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077458881360635925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6910ee400d6114a9b20d30c4c0a869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentDammage: 10
+  CanReopen: 0
 --- !u!1 &2300281072368665432
 GameObject:
   m_ObjectHideFlags: 0
