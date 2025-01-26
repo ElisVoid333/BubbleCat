@@ -55,7 +55,7 @@ public class Boss_Eel_Move : StateMachineBehaviour
 
 
 
-        if (unitlAttack >= 10)
+        if (unitlAttack >= 7)
         {
             
             animator.SetTrigger("LungeAttack");

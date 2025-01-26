@@ -27,7 +27,7 @@ public class BossFightChecker : MonoBehaviour
     {
 
         Camera.depth = 2;
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(4);
         Camera.depth = -1;
     }
 
