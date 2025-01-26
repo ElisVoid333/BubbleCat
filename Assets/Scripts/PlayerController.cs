@@ -280,6 +280,8 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = new Vector3(0f, 0f, 0f);
 
+        animator.SetBool("Hiss", true);
+
         if (isFlipped)
         {
             GameObject newBubble = Instantiate(bubble, new Vector2(this.transform.position.x - bubbleOffSet, this.transform.position.y), Quaternion.identity);
@@ -311,6 +313,7 @@ public class PlayerController : MonoBehaviour
 
         isAttacking = false;
         canDash = true;
+        animator.SetBool("Hiss", false);
 
         yield return new WaitForSeconds(rangeAttackCooldown);
     }
