@@ -20,46 +20,11 @@ public class RockSmash : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        /*
-        if(collision)
-        {
-            collapse();
-        }
-        */
-    }
-
     public void collapse()
-    {
-        //play earth spell        
+    {       
         PS.Play();
         AS.Play();
-        Debug.Log("DestroyRock");
-
 
         gameObject.SetActive(false);
-        //StartCoroutine(FadeOut());
     }
-
-    private IEnumerator FadeOut()
-    {
-        float alphaVal = SR.color.a;
-        Color tmp = SR.color;
-
-        while (SR.color.a < 1)
-        {
-            alphaVal += 0.01f;
-            tmp.a = alphaVal;
-            SR.color = tmp;
-        }
-
-        if(SR.color.a >= 1)
-        {
-            PS.Stop();
-        }
-
-        yield break;
-    }
-
 }
