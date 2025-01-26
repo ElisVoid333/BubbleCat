@@ -2396,6 +2396,7 @@ GameObject:
   - component: {fileID: 5821532315117551386}
   - component: {fileID: 1683317144613594420}
   - component: {fileID: 4659507882774766491}
+  - component: {fileID: 8088823461303159030}
   m_Layer: 0
   m_Name: Scratch
   m_TagString: Untagged
@@ -2515,6 +2516,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 14.007018, y: 10.967545}
   m_EdgeRadius: 0
+--- !u!114 &8088823461303159030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6860778820719583672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aecf14f05596574c820d0654ab5cad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentDammage: 5
+  CanReopen: 1
 --- !u!1 &7157081389042719914
 GameObject:
   m_ObjectHideFlags: 0

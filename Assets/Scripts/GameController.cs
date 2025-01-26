@@ -30,12 +30,12 @@ public class GameController : MonoBehaviour
        // SceneManager.LoadScene(sceneNumber+1);
 
         //TODO : add +1 when we have other Scenes
-       StartCoroutine(SceneTrasition(sceneNumber));
+       StartCoroutine(SceneTrasition(sceneNumber+1));
     }
 
     public void GoToStart()
     {
-        StartCoroutine(SceneTrasition(1));
+        StartCoroutine(SceneTrasition(0));
     }
 
 

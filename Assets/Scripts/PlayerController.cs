@@ -260,7 +260,7 @@ public class PlayerController : MonoBehaviour
         canDash = false;
 
         scratch.SetActive(true);
-
+        scratch.GetComponent<Collider2D>().enabled = true;
         yield return new WaitForSeconds(lightAttackTime);
         
         scratch.SetActive(false);
