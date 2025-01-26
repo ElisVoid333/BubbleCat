@@ -9,7 +9,7 @@ using static UnityEngine.GraphicsBuffer;
 public class Boss_Eel_Move : StateMachineBehaviour
 {
     Transform player;
-    Rigidbody2D rb;
+    //Rigidbody2D rb;
     float currentspeed;
 
     float AttackRange = 3f;
@@ -25,7 +25,7 @@ public class Boss_Eel_Move : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        rb = animator.gameObject.GetComponent<Rigidbody2D>();
+        //rb = animator.gameObject.GetComponent<Rigidbody2D>();
         boss = animator.gameObject.GetComponent<BossScript>();
         currentspeed = boss.Basespeed;
         unitlAttack = 0;
@@ -34,7 +34,7 @@ public class Boss_Eel_Move : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        boss.LookAtPlayer();
+       
         if (Enraged)
         {
             currentspeed = boss.Ragespeed;
@@ -46,12 +46,13 @@ public class Boss_Eel_Move : StateMachineBehaviour
 
         unitlAttack += Time.deltaTime;
 
-        float directionx = Mathf.Sign(player.position.x - rb.transform.position.x);
-        float directiony = Mathf.Sign(player.position.x - rb.transform.position.x);
+       // float directionx = Mathf.Sign(player.position.x - rb.transform.position.x);
+       // float directiony = Mathf.Sign(player.position.x - rb.transform.position.x);
 
         
-        animator.gameObject.transform.right = -(player.position - animator.gameObject.transform.position);
-        if(animator)
+        animator.gameObject.transform.right = -(player.position - animator.gameObject.transform.position); 
+        boss.EelFlip();
+
 
 
         if (unitlAttack >= 10)

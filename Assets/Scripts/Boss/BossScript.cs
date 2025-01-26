@@ -184,7 +184,18 @@ public class BossScript : MonoBehaviour
         
     }
 
+    public void EelFlip()
+    {
+        if (gameObject.transform.localRotation.z < -90)
+        {
 
+            gameObject.GetComponentInChildren<SpriteRenderer>().flipY = true;
+        }
+        else if (gameObject.transform.localRotation.z > -90)
+        {
+            gameObject.GetComponentInChildren<SpriteRenderer>().flipY = false;
+        }
+    }
 
 
 }
