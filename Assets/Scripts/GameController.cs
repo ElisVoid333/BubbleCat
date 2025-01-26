@@ -76,7 +76,7 @@ public class GameController : MonoBehaviour
                 ExplosiveBubbles = true;
                 break;
             case 2:
-                bubbleJet = true;
+                //bubbleJet = true;
                 break;
 
         }
@@ -93,7 +93,7 @@ public class GameController : MonoBehaviour
                 return ExplosiveBubbles;
                 break;
             case 2:
-                return bubbleJet;
+                //return bubbleJet;
                 break;
 
         }
