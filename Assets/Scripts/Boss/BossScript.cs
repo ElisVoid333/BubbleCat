@@ -63,6 +63,7 @@ public class BossScript : MonoBehaviour
     public void StartFight()
     {
         modelanimator.SetTrigger("StartFight");
+        StartCoroutine(resetSpecial());
     }
 
     public void LookAtPlayer()
@@ -131,7 +132,7 @@ public class BossScript : MonoBehaviour
 
     IEnumerator resetSpecial()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(20);
         CanSpecialAttack = true;
 
     }
@@ -163,4 +164,18 @@ public class BossScript : MonoBehaviour
             return false;
         }
     }
+
+    public void TakeDammage(int Dammage)
+    {
+        BossCurrentHp-=Dammage;
+
+        if (BossCurrentHp <= 0)
+        {
+            //bossdead
+        }
+    }
+
+
+
+
 }
