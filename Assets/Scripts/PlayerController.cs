@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     //Attack Variables
     private bool isAttacking;
     [Header("Light Attack Variables")]
-    [SerializeField] public int Lightdamage;
+    [SerializeField] public int Lightdamage = 5;
     [SerializeField] private GameObject scratch;
     [SerializeField] private float lightAttackTime;
     [SerializeField] private float lightAttackCooldown;
@@ -55,13 +55,17 @@ public class PlayerController : MonoBehaviour
     private bool canDash = true;
     private bool isDashing;
 
+    [Header("Abilities Unlocked")]
+    [SerializeField] private bool bubbleExplosionAbility;
+    [SerializeField] private GameObject bubbleExplosion; 
+    [SerializeField] private float explodeAttackTime;
+    [SerializeField] private float explodeAttackCooldown;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         scratch.SetActive(false);
-
-        rangeAttackSound = GetComponent<AudioClip>(); 
+        bubbleExplosion.SetActive(false);
     }
 
     private void Update()
@@ -118,9 +122,16 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Range Attack");
             StartCoroutine(rangeAttack());
         }
+        /*-- Abilities --*/
+        if (bubbleExplosionAbility) 
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                StartCoroutine(bubbleExplode());
+            }
+        }
 
         /*-- HUD Changes --*/
-
         //Stamina
         if (stamina == 5)
         {
@@ -237,7 +248,6 @@ public class PlayerController : MonoBehaviour
         canDash = false;
 
         scratch.SetActive(true);
-        scratch.GetComponent<HitboxChecker>().CurrentDammage = Lightdamage;
 
         yield return new WaitForSeconds(lightAttackTime);
         
@@ -274,6 +284,29 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(rangeAttackCooldown);
     }
 
+    private IEnumerator bubbleExplode()
+    {
+        isAttacking = true;
+        canDash = false;
+
+        rb.velocity = new Vector3(0f, 0f, 0f);
+
+        //Debug.Log(bubbleExplosion.transform.localScale);
+        Vector3 originalScale = bubbleExplosion.transform.localScale;
+
+        bubbleExplosion.SetActive(true);
+
+        yield return new WaitForSeconds(explodeAttackTime);
+
+        bubbleExplosion.transform.localScale = originalScale;
+        bubbleExplosion.SetActive(false);
+        isAttacking = false;
+        canDash = true;
+
+        yield return new WaitForSeconds(explodeAttackCooldown);
+    }
+
+    /*-- Collision Functions --*/
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Floor")
