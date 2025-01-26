@@ -746,7 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 4668843372301031460}
-  offset: 4
+  offset: 2
 --- !u!20 &7721328541522891910
 Camera:
   m_ObjectHideFlags: 0
