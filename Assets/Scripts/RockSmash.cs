@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class RockSmash : MonoBehaviour
 {
-    SpriteRenderer SR;
+    [SerializeField]SpriteRenderer SR;
     public ParticleSystem PS;
+    [SerializeField] AudioSource AS;
 
     // Start is called before the first frame update
     void Start()
@@ -29,11 +30,16 @@ public class RockSmash : MonoBehaviour
         */
     }
 
-    void collapse()
+    public void collapse()
     {
         //play earth spell        
         PS.Play();
-        StartCoroutine(FadeOut());
+        AS.Play();
+        Debug.Log("DestroyRock");
+
+
+        gameObject.SetActive(false);
+        //StartCoroutine(FadeOut());
     }
 
     private IEnumerator FadeOut()

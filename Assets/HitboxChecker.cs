@@ -22,19 +22,19 @@ public class HitboxChecker : MonoBehaviour
         {
             Debug.Log("dammageBoss");
             collision.gameObject.GetComponent<BossScript>().TakeDammage(CurrentDammage);
-           
+            StartCoroutine(delayDammage());
         }
         if (collision.gameObject.tag == "Bosschild")
         {
             Debug.Log("dammageBoss");
             collision.gameObject.transform.parent.GetComponent<BossScript>().TakeDammage(CurrentDammage);
-            
+            StartCoroutine(delayDammage());
         }
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("dammageEnemy");
             collision.gameObject.GetComponent<EnemyController>().TakeDammage();
-            
+            StartCoroutine(delayDammage());
         }
         if (collision.gameObject.tag == "Ability")
         {

@@ -11,6 +11,7 @@ TagManager:
   - Bosschild
   - Ability
   - Ability2
+  - RockBreak
   layers:
   - Default
   - TransparentFX
