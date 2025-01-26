@@ -231,6 +231,7 @@ Transform:
   - {fileID: 8659108754152381163}
   - {fileID: 7202427625313356753}
   - {fileID: 3397953599521563539}
+  - {fileID: 5037640810422480108}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2447726079399131399
@@ -291,6 +292,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Camera: {fileID: 5117950363691591625}
+  Ability: {fileID: 1010949619465423375, guid: 6347d880c0e05474398e146f93ce747d, type: 3}
+  spawnLocation: {fileID: 5037640810422480108}
 --- !u!1 &2980247049050151275
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,6 +645,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6268908148118734495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5037640810422480108}
+  m_Layer: 9
+  m_Name: AbilitySpawnLocal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5037640810422480108
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6268908148118734495}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.15, y: -3.24, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3253233863086701657}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6931343750791524605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,6 +1129,11 @@ PrefabInstance:
       propertyPath: BossAnimator
       value: 
       objectReference: {fileID: 3044316281157564982}
+    - target: {fileID: 4182249689910069775, guid: 83de207a4e0562845af2f3e1e7266b62,
+        type: 3}
+      propertyPath: FightChecker
+      value: 
+      objectReference: {fileID: 962156575115841160}
     - target: {fileID: 4182249689910069775, guid: 83de207a4e0562845af2f3e1e7266b62,
         type: 3}
       propertyPath: isInvincible

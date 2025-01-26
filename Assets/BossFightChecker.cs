@@ -6,6 +6,8 @@ public class BossFightChecker : MonoBehaviour
 {
     bool bossfightStarted;
     public Camera Camera;
+    [SerializeField] GameObject Ability;
+    [SerializeField] Transform spawnLocation;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
@@ -27,4 +29,13 @@ public class BossFightChecker : MonoBehaviour
         yield return new WaitForSeconds(6);
         Camera.depth = -1;
     }
+
+
+
+    public void EndBossFight()
+    {
+        Instantiate(Ability, spawnLocation.position, Quaternion.identity);
+    }
+
+
 }

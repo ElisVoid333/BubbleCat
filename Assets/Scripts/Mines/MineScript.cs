@@ -7,7 +7,14 @@ public class MineScript : MonoBehaviour
     public GameObject PlayerEnter;
     public float countdown;
     [SerializeField] GameObject ExplosionPrefab;
+    [SerializeField] GameObject mask;
+   
     bool isExploding;
+
+    private void Start()
+    {
+       
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -43,6 +50,10 @@ public class MineScript : MonoBehaviour
 
     public void ArmBomb()
     {
+
+
+        //mineMaterial.color = Color.red;
+        mask.SetActive(true);
         this.GetComponent<SpriteRenderer>().color = Color.red;
     }
 

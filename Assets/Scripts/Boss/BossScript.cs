@@ -24,7 +24,7 @@ public class BossScript : MonoBehaviour
     [SerializeField] GameObject ClawAttackPrefab;
     [SerializeField] BossHPControl HpBar;
     public bool isInvincible=false;
-   
+    [SerializeField] BossFightChecker FightChecker;
 
 
     // Start is called before the first frame update
@@ -177,6 +177,7 @@ public class BossScript : MonoBehaviour
 
             if (BossCurrentHp <= 0)
             {
+                FightChecker.EndBossFight();
                 BossAnimator.SetTrigger("Death");
                 modelanimator.SetTrigger("Death");
             }
