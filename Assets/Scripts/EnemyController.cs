@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     public float speed;
     public float distance;
     float initial;
+    int health = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -55,5 +56,14 @@ public class EnemyController : MonoBehaviour
         
         transform.position = pos;
         gameObject.transform.localScale = squash;
+    }
+
+    public void TakeDammage()
+    {
+        health--;
+
+        if (health <= 0) {
+            Destroy(gameObject);
+        }
     }
 }
