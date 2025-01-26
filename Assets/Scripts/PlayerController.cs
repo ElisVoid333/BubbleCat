@@ -65,6 +65,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float explodeAttackTime;
     [SerializeField] private float explodeAttackCooldown;
 
+    void Awake()
+    {
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

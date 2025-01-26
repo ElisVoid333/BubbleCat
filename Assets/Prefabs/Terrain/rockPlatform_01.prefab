@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 61546657091384212}
   m_Layer: 0
   m_Name: rockPlatform_01
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
