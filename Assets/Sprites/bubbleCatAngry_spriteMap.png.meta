@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bubbleCatAngry_spriteMap_1
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 763
+        width: 562
+        height: 2253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1281a6059df829b48b28543f233cb075
+      internalID: -1721978338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubbleCatAngry_spriteMap_tail
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 783
+        width: 597
+        height: 2324
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 020a69b55f449a54f99b8a7c1c39ac2c
+      internalID: 680677943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubbleCatAngry_spriteMap_5
+      rect:
+        serializedVersion: 2
+        x: 2011
+        y: 852
+        width: 606
+        height: 2335
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e284f5cedf0654cbd0e0d9364ed1f1
+      internalID: 321240618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubbleCatAngry_spriteMap_body
+      rect:
+        serializedVersion: 2
+        x: 2853
+        y: 668
+        width: 2709
+        height: 2455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a78015e02c6c94949a164ec6cf9be186
+      internalID: 609978041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +216,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bubbleCatAngry_spriteMap_0: -1332128205
+      bubbleCatAngry_spriteMap_1: -1721978338
+      bubbleCatAngry_spriteMap_10: 1813729068
+      bubbleCatAngry_spriteMap_11: 593631079
+      bubbleCatAngry_spriteMap_12: -1875857995
+      bubbleCatAngry_spriteMap_13: -1579127049
+      bubbleCatAngry_spriteMap_14: 918577469
+      bubbleCatAngry_spriteMap_15: 1696193417
+      bubbleCatAngry_spriteMap_2: 1402150516
+      bubbleCatAngry_spriteMap_3: 376793518
+      bubbleCatAngry_spriteMap_5: 321240618
+      bubbleCatAngry_spriteMap_7: 792487047
+      bubbleCatAngry_spriteMap_8: 438092628
+      bubbleCatAngry_spriteMap_9: 162367021
+      bubbleCatAngry_spriteMap_body: 609978041
+      bubbleCatAngry_spriteMap_tail: 680677943
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

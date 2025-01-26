@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Dash
-        if (Input.GetKeyDown(KeyCode.LeftControl) && canDash && stamina > 0)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && stamina > 0)
         {
             //Debug.Log("Dashing");
             StartCoroutine(Dash());
