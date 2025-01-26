@@ -25,16 +25,16 @@ public class EnemyController : MonoBehaviour
         Vector3 pos = transform.position;
         Vector3 direction = transform.localScale;
 
-        pos.x = Mathf.PingPong(Time.time * speed, distance) + initialX;
+        pos.x = (Mathf.PingPong(Time.time * speed, distance) * -1) + initialX;
         transform.position = pos;
 
-        if(pos.x <= ((0.1) + initialX))
-        {
-            gameObject.GetComponent<SpriteRenderer>().flipX = true;
-        }
-        else if(pos.x >= ((distance - 0.1) + initialX))
+        if(pos.x >= (initialX - 0.1))
         {
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else if(pos.x <= (initialX - (distance - 0.1f)))
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
     }
 }
