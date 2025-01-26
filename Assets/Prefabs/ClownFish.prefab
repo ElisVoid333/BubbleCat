@@ -99,8 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f3ef8d1fc168a4ab22afd3b35e658b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vertical: 0
   speed: 1
   distance: 50
+  health: 2
 --- !u!70 &8993242027560983842
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -149,3 +151,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentDammage: 0
+  CanReopen: 1

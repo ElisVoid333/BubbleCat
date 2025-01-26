@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentDammage: 0
+  CanReopen: 1
 --- !u!70 &1607284803867488561
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
