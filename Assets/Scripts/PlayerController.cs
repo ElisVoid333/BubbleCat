@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private int health = 6;
     private int stamina = 5;
     public Animator animator;
+    public Animator bubbleAnimator;
     [Header("Health Hearts")]
     [SerializeField] private GameObject HealthHalf1;
     [SerializeField] private GameObject HealthHalf2;
@@ -48,7 +49,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float bubbleOffSet;
     [SerializeField] private float rangeAttackTime;
     [SerializeField] private float rangeAttackCooldown;
-    [SerializeField] private AudioClip rangeAttackSound;
 
     [Header("Dash Variables")]
     [SerializeField] private float dashForce;
@@ -282,6 +282,8 @@ public class PlayerController : MonoBehaviour
 
         animator.SetBool("Hiss", true);
 
+        GetComponent<AudioSource>().Play();
+
         if (isFlipped)
         {
             GameObject newBubble = Instantiate(bubble, new Vector2(this.transform.position.x - bubbleOffSet, this.transform.position.y), Quaternion.identity);
@@ -325,17 +327,24 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = new Vector3(0f, 0f, 0f);
 
+        animator.SetBool("Hiss", true);
+
+        GetComponent<AudioSource>().Play();
+
+        bubbleAnimator.Play("BubbleExplode");
+
         //Debug.Log(bubbleExplosion.transform.localScale);
-        Vector3 originalScale = bubbleExplosion.transform.localScale;
+        Vector3 originalScale = bubbleExplosion.transform.GetChild(0).transform.localScale;
 
         bubbleExplosion.SetActive(true);
         bubbleExplosion.GetComponent<Collider2D>().enabled = true;
         yield return new WaitForSeconds(explodeAttackTime);
 
-        bubbleExplosion.transform.localScale = originalScale;
+        bubbleExplosion.transform.GetChild(0).transform.localScale = originalScale;
         bubbleExplosion.SetActive(false);
         isAttacking = false;
         canDash = true;
+        animator.SetBool("Hiss", false);
 
         yield return new WaitForSeconds(explodeAttackCooldown);
     }
