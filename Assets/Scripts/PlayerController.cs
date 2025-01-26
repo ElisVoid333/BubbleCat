@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         //Jump
-        if (Input.GetKeyDown(KeyCode.W) && stamina > 0)
+        if (Input.GetKeyDown(KeyCode.W) && stamina > 0 || Input.GetKeyDown(KeyCode.Space) && stamina > 0)
         {
             //Debug.Log("Jumping");
             animator.SetBool("Jumping", true);
