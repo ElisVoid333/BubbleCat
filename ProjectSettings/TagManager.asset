@@ -10,6 +10,7 @@ TagManager:
   - Boss
   - Bosschild
   - Ability
+  - Ability2
   layers:
   - Default
   - TransparentFX
