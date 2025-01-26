@@ -25,6 +25,10 @@ public class HitboxChecker : MonoBehaviour
             Debug.Log("dammageBoss");
             collision.gameObject.transform.parent.GetComponent<BossScript>().TakeDammage(CurrentDammage);
         }
+        if (collision.gameObject.tag == "Ability")
+        {
+            collision.GetComponent<AbilityTrigger>().GiveAbility();
+        }
 
     }
 }

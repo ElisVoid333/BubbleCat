@@ -66,6 +66,40 @@ public class GameController : MonoBehaviour
         GoToStart();
     }
 
+    public void GiveAbility(int num)
+    {
+        switch (num)
+        {
+            case 0:
+                IncreasedRange = true;
+                break;
+            case 1:
+                ExplosiveBubbles = true;
+                break;
+            case 2:
+                bubbleJet = true;
+                break;
 
-    
+        }
+    }
+
+    public bool HasAbility(int num)
+    {
+        switch (num)
+        {
+            case 0:
+                return IncreasedRange;
+                break;
+            case 1:
+                return ExplosiveBubbles;
+                break;
+            case 2:
+                return bubbleJet;
+                break;
+
+        }
+        return false;
+
+    }
+
 }
