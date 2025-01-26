@@ -63,6 +63,7 @@ public class BossScript : MonoBehaviour
     public void StartFight()
     {
         modelanimator.SetTrigger("StartFight");
+        isInvincible = false;
         StartCoroutine(resetSpecial());
     }
 
@@ -138,11 +139,11 @@ public class BossScript : MonoBehaviour
     }
 
 
-    public void CharacterIdleTime(Animator anim, int idletime)
+    public void CharacterIdleTime(Animator anim, float idletime)
     {
         StartCoroutine(IdleTime(anim,idletime));
     }
-    IEnumerator IdleTime(Animator anim, int IdleTime)
+    IEnumerator IdleTime(Animator anim, float IdleTime)
     {
         yield return new WaitForSeconds(IdleTime);
         anim.SetTrigger("EndIdle");
@@ -165,14 +166,22 @@ public class BossScript : MonoBehaviour
         }
     }
 
+    
+
+
     public void TakeDammage(int Dammage)
     {
-        BossCurrentHp-=Dammage;
-
-        if (BossCurrentHp <= 0)
+        if(!isInvincible)
         {
-            //bossdead
+            BossCurrentHp-=Dammage;
+
+            if (BossCurrentHp <= 0)
+            {
+                BossAnimator.SetTrigger("Death");
+                modelanimator.SetTrigger("Death");
+            }
         }
+        
     }
 
 

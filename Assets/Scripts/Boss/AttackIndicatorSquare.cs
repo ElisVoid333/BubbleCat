@@ -43,19 +43,26 @@ public class AttackIndicatorSquare : MonoBehaviour
 
             //spawnedAttack.gameObject.transform.GetChild(0).transform.localScale = this.transform.parent.localScale;
 
-            if ( playerInside!=null)
-            {
-                
-                // deal dammage to player
-                playerInside.GetComponent<PlayerController>().TakeDammage();
-                // then destroy this object
-            }
-            else
-            {
-                
-            }
-            Destroy(this.gameObject,1);
+            StartCoroutine(AttackPlayer());
         }
+    }
+
+
+   IEnumerator AttackPlayer()
+    {
+        yield return new WaitForSeconds(1f);
+        if (playerInside != null)
+        {
+
+            // deal dammage to player
+            playerInside.GetComponent<PlayerController>().TakeDammage();
+            // then destroy this object
+        }
+        else
+        {
+
+        }
+        Destroy(this.gameObject, 1);
     }
 
 }
