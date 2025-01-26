@@ -10,27 +10,33 @@ public class GameController : MonoBehaviour
     public bool IncreasedRange;
     public bool ExplosiveBubbles;
     //public bool bubbleJet;
+    public AudioClip mainMusic;
+    public AudioClip bossMusic;
+    public AudioSource soundMusic;
+
+    [SerializeField] BossFightChecker FightChecker;
 
     private void Awake()
     {
+        soundMusic.clip = mainMusic;
+        soundMusic.Play();
+
         GameObject[] objs = GameObject.FindGameObjectsWithTag("GameController");
 
         if (objs.Length > 1)
         {
             Destroy(this.gameObject);
         }
-        DontDestroyOnLoad(this.gameObject);
-
-        
+        DontDestroyOnLoad(this.gameObject);        
     }
 
     public void GoToNextScene()
     {
         int sceneNumber = SceneManager.GetActiveScene().buildIndex;
-       // SceneManager.LoadScene(sceneNumber+1);
+        // SceneManager.LoadScene(sceneNumber+1);
 
         //TODO : add +1 when we have other Scenes
-       StartCoroutine(SceneTrasition(sceneNumber+1));
+        StartCoroutine(SceneTrasition(sceneNumber+1));
     }
 
     public void GoToStart()
@@ -47,8 +53,7 @@ public class GameController : MonoBehaviour
         //gameObject.GetComponent<AudioSource>().Play();
         SceneManager.LoadScene(goToScene);
         yield return new WaitForSeconds(.5f);
-        SceneFader.SetTrigger("FadeEnd");
-        
+        SceneFader.SetTrigger("FadeEnd");        
     }
 
 
@@ -57,6 +62,17 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.V))
         {
             GoToNextScene();
+        }
+
+        if (FightChecker.bossfightEnded == true && soundMusic.clip != mainMusic)
+        {
+            soundMusic.clip = mainMusic;
+            soundMusic.Play();
+        }
+        else if (FightChecker.bossfightStarted == true && soundMusic.clip != bossMusic && FightChecker.bossfightEnded == false)
+        {
+            soundMusic.clip = bossMusic;
+            soundMusic.Play();
         }
     }
 
@@ -98,7 +114,5 @@ public class GameController : MonoBehaviour
 
         }
         return false;
-
     }
-
 }

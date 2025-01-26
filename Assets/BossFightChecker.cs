@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BossFightChecker : MonoBehaviour
 {
-    bool bossfightStarted;
+    public bool bossfightStarted;
+    public bool bossfightEnded;
     public Camera Camera;
     [SerializeField] GameObject Ability;
     [SerializeField] Transform spawnLocation;
@@ -15,17 +16,15 @@ public class BossFightChecker : MonoBehaviour
         {
             if(bossfightStarted == false)
             {
-            bossfightStarted = true;
-            this.gameObject.GetComponentInChildren<BossScript>().StartFight();
-            StartCoroutine(camrachange());
-            }
-            
+                bossfightStarted = true;
+                this.gameObject.GetComponentInChildren<BossScript>().StartFight();
+                StartCoroutine(camrachange());
+            }            
         }
     }
 
     IEnumerator camrachange()
     {
-
         Camera.depth = 2;
         yield return new WaitForSeconds(4);
         Camera.depth = -1;
@@ -35,6 +34,7 @@ public class BossFightChecker : MonoBehaviour
 
     public void EndBossFight()
     {
+        bossfightEnded = true;
         if(square != null)
         {
             square.SetActive(false);
