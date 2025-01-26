@@ -126,7 +126,7 @@ public class BossScript : MonoBehaviour
 
     IEnumerator EndSpecialCooldown(Animator anim)
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
         anim.SetTrigger("EndSpecial");
         StartCoroutine(resetSpecial());
     }

@@ -2544,7 +2544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentDammage: 5
-  CanReopen: 1
+  CanReopen: 0
 --- !u!1 &7157081389042719914
 GameObject:
   m_ObjectHideFlags: 0
