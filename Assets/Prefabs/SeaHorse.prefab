@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1117159104943107562}
   - component: {fileID: 3233588882567520884}
   - component: {fileID: 6848937530084025107}
+  - component: {fileID: 1607284803867488561}
   m_Layer: 0
   m_Name: SeaHorse
   m_TagString: Enemy
@@ -99,8 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f3ef8d1fc168a4ab22afd3b35e658b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vertical: 0
   speed: 5
   distance: 10
+  health: 2
 --- !u!70 &3233588882567520884
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -149,3 +152,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentDammage: 0
+--- !u!70 &1607284803867488561
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973256254980227164}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.44824147, y: 0}
+  m_Size: {x: 3.5630536, y: 10.75}
+  m_Direction: 0
