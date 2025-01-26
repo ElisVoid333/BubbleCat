@@ -42,11 +42,14 @@ public class GameController : MonoBehaviour
 
     IEnumerator SceneTrasition(int goToScene)
     {
+        gameObject.GetComponent<AudioSource>().Play();
         SceneFader.SetTrigger("FadeStart");
         yield return new WaitForSeconds(.5f);
+        //gameObject.GetComponent<AudioSource>().Play();
         SceneManager.LoadScene(goToScene);
         yield return new WaitForSeconds(.5f);
         SceneFader.SetTrigger("FadeEnd");
+        
     }
 
 
