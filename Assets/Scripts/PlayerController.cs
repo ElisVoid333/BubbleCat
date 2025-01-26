@@ -82,6 +82,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        upgradedRangedAttack = gc.IncreasedRange;
+        bubbleExplosionAbility = gc.ExplosiveBubbles;
+
         //Jump
         if (Input.GetKeyDown(KeyCode.W) && stamina > 0 || Input.GetKeyDown(KeyCode.Space) && stamina > 0)
         {

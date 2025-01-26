@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9046188029351905436}
   m_Layer: 0
   m_Name: GiveAbility
-  m_TagString: Untagged
+  m_TagString: Ability
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
