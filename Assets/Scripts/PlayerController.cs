@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    GameController gc;
+
     //Character Variables
     private int health = 6;
     private int stamina = 5;
@@ -68,6 +70,9 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         scratch.SetActive(false);
         bubbleExplosion.SetActive(false);
+
+        upgradedRangedAttack = gc.IncreasedRange;
+        bubbleExplosionAbility = gc.ExplosiveBubbles;
     }
 
     private void Update()
