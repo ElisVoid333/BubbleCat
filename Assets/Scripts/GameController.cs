@@ -64,15 +64,18 @@ public class GameController : MonoBehaviour
             GoToNextScene();
         }
 
-        if (FightChecker.bossfightEnded == true && soundMusic.clip != mainMusic)
-        {
-            soundMusic.clip = mainMusic;
-            soundMusic.Play();
-        }
-        else if (FightChecker.bossfightStarted == true && soundMusic.clip != bossMusic && FightChecker.bossfightEnded == false)
-        {
-            soundMusic.clip = bossMusic;
-            soundMusic.Play();
+        if (FightChecker != null)
+        { 
+            if (FightChecker.bossfightEnded == true && soundMusic.clip != mainMusic)
+            {
+                soundMusic.clip = mainMusic;
+                soundMusic.Play();
+            }
+            else if (FightChecker.bossfightStarted == true && soundMusic.clip != bossMusic && FightChecker.bossfightEnded == false)
+            {
+                soundMusic.clip = bossMusic;
+                soundMusic.Play();
+            }
         }
     }
 
