@@ -8,6 +8,7 @@ TagManager:
   - EnemySpawns
   - Enemy
   - Boss
+  - Bosschild
   layers:
   - Default
   - TransparentFX
