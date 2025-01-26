@@ -294,6 +294,7 @@ MonoBehaviour:
   Camera: {fileID: 5117950363691591625}
   Ability: {fileID: 1010949619465423375, guid: 6347d880c0e05474398e146f93ce747d, type: 3}
   spawnLocation: {fileID: 5037640810422480108}
+  square: {fileID: 0}
 --- !u!1 &2980247049050151275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,7 +1242,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2012100911128152542, guid: 83de207a4e0562845af2f3e1e7266b62,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1178865368704277629}
+      addedObject: {fileID: 2786274115241702884}
   m_SourcePrefab: {fileID: 100100000, guid: 83de207a4e0562845af2f3e1e7266b62, type: 3}
 --- !u!1 &803307659227212235 stripped
 GameObject:
@@ -1276,8 +1277,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &1178865368704277629
-BoxCollider2D:
+--- !u!70 &2786274115241702884
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1308,19 +1309,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 8.58, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 14.25, y: 3}
-    newSize: {x: 1, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 14.25, y: 3}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.00000004889463, y: -0.41015795}
+  m_Size: {x: 14.250002, y: 2.1796887}
+  m_Direction: 1
 --- !u!95 &3044316281157564982 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4248603735532214819, guid: 83de207a4e0562845af2f3e1e7266b62,
