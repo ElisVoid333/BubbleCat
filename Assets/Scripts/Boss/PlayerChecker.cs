@@ -10,7 +10,7 @@ public class PlayerChecker : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            SquareIndacator.playerInside = true;
+            SquareIndacator.playerInside = collision.gameObject;
         }
     }
 
@@ -18,7 +18,7 @@ public class PlayerChecker : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            SquareIndacator.playerInside = false;
+            SquareIndacator.playerInside = null;
         }
     }
 }

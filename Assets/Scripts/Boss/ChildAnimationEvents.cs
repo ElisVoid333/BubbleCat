@@ -31,11 +31,11 @@ public class ChildAnimationEvents : MonoBehaviour
 
     public void ActivateHitbox()
     {
-        collision2D.gameObject.SetActive(true);
+        collision2D.enabled = true;
     }
     public void DeactivateHitbox()
     {
-        collision2D.gameObject.SetActive(false);
+        collision2D.enabled=false;
     }
 
 

@@ -30,8 +30,8 @@ public class Boss_Move : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     { 
         boss.LookAtPlayer();
-        isGrounded = Physics2D.Raycast(rb.transform.position, Vector2.down, 1.5f, boss.groundlayer);
-        Debug.DrawRay(rb.transform.position, Vector2.down, Color.red, 1.5f);
+        isGrounded = Physics2D.Raycast(rb.transform.position, Vector2.down, 2f, boss.groundlayer);
+        Debug.DrawRay(rb.transform.position, Vector2.down, Color.red, 2f);
         float direction = Mathf.Sign(player.position.x- rb.transform.position.x);
 
         bool isPlayerAbove = Physics2D.Raycast(rb.transform.position,Vector2.up, 8f, 1<< player.gameObject.layer);

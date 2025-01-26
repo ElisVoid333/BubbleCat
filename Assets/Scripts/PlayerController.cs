@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     //Attack Variables
     private bool isAttacking;
     [Header("Light Attack Variables")]
-    [SerializeField] public int damage;
+    [SerializeField] public int Lightdamage;
     [SerializeField] private GameObject scratch;
     [SerializeField] private float lightAttackTime;
     [SerializeField] private float lightAttackCooldown;
@@ -120,6 +120,7 @@ public class PlayerController : MonoBehaviour
         }
 
         /*-- HUD Changes --*/
+
         //Stamina
         if (stamina == 5)
         {
@@ -151,6 +152,39 @@ public class PlayerController : MonoBehaviour
         }
 
         //Health
+        if (health == 6)
+        {
+            HealthHalf1.SetActive(true);
+            HealthHalf2.SetActive(true);
+            HealthHalf3.SetActive(true);
+            HealthHalf4.SetActive(true);
+            HealthHalf5.SetActive(true);
+            HealthHalf6.SetActive(true);
+        }
+        else if (health == 5)
+        {
+            HealthHalf6.SetActive(false);
+        }
+        else if (health == 4)
+        {
+            HealthHalf5.SetActive(false);
+        }
+        else if (health == 3)
+        {
+            HealthHalf4.SetActive(false);
+        }
+        else if (health == 2)
+        {
+            HealthHalf3.SetActive(false);
+        }
+        else if (health == 1)
+        {
+            HealthHalf2.SetActive(false);
+        }
+        else if (health == 0)
+        {
+            HealthHalf1.SetActive(false);
+        }
     }
 
     void FixedUpdate()
@@ -203,6 +237,7 @@ public class PlayerController : MonoBehaviour
         canDash = false;
 
         scratch.SetActive(true);
+        scratch.GetComponent<HitboxChecker>().CurrentDammage = Lightdamage;
 
         yield return new WaitForSeconds(lightAttackTime);
         
@@ -248,4 +283,16 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Jumping", false);
         }
     }
+
+    public void TakeDammage()
+    {
+        health--;
+
+        if (health <= 0)
+        {
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameController>().PlayerDeath();
+        }
+    }
+
+
 }
