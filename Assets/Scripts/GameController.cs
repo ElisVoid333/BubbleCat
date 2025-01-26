@@ -7,10 +7,9 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] Animator SceneFader;
 
-
     public bool IncreasedRange;
     public bool ExplosiveBubbles;
-    public bool bubbleJet;
+    //public bool bubbleJet;
 
     private void Awake()
     {
