@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class ChildAnimationEvents : MonoBehaviour
     [SerializeField]Animator thisanimator;
     [SerializeField]Animator StateMachine;
     [SerializeField]Collider2D collision2D;
+    [SerializeField] GameObject containter;
 
     private void Start()
     {
@@ -38,7 +40,10 @@ public class ChildAnimationEvents : MonoBehaviour
         collision2D.enabled=false;
     }
 
-
+    public void Die()
+    {
+        containter.SetActive(false);
+    }
 
 
 }
