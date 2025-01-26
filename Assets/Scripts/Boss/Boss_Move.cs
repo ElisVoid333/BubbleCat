@@ -47,10 +47,7 @@ public class Boss_Move : StateMachineBehaviour
 
 
         if (isGrounded)
-        {
-            
-            rb.velocity = new Vector2(direction*currentspeed, rb.velocity.y);
-        
+        { 
 
             RaycastHit2D groundhitInfront = Physics2D.Raycast(rb.transform.position, new Vector2(direction, 0), 2f, boss.groundlayer);
             RaycastHit2D gapAhead = Physics2D.Raycast(rb.transform.position + new Vector3(direction, 0,0),Vector2.down ,2f, boss.groundlayer);
@@ -69,6 +66,8 @@ public class Boss_Move : StateMachineBehaviour
                
             }
         }
+
+        rb.velocity = new Vector2(direction * currentspeed, rb.velocity.y);
 
         //Vector2 target = new Vector2(player.position.x, rb.position.y);
 

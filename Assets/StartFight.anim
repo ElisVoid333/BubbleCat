@@ -19,7 +19,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.9
-        value: {x: -26.62, y: -156.139, z: -11.21}
+        value: {x: -20, y: -140, z: -11.21}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -28,7 +28,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 3.4833333
-        value: {x: -26.62, y: -156.139, z: -11.21}
+        value: {x: -20, y: -140, z: -11.21}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -223,7 +223,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.9
-        value: -26.62
+        value: -20
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -232,7 +232,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 3.4833333
-        value: -26.62
+        value: -20
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -253,7 +253,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.9
-        value: -156.139
+        value: -140
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -262,7 +262,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 3.4833333
-        value: -156.139
+        value: -140
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -748,7 +748,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Base
+    path: Base/Leg1_R_Hip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -760,7 +760,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Base
+    path: Base/Leg1_R_Hip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -772,7 +772,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Base
+    path: Base/Leg1_R_Hip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -820,7 +820,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Base/Leg1_R_Hip
+    path: Base
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -832,7 +832,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Base/Leg1_R_Hip
+    path: Base
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -844,7 +844,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Base/Leg1_R_Hip
+    path: Base
     classID: 4
     script: {fileID: 0}
     flags: 0
