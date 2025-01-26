@@ -8,6 +8,7 @@ public class BossFightChecker : MonoBehaviour
     public Camera Camera;
     [SerializeField] GameObject Ability;
     [SerializeField] Transform spawnLocation;
+    [SerializeField] GameObject square;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
@@ -34,6 +35,10 @@ public class BossFightChecker : MonoBehaviour
 
     public void EndBossFight()
     {
+        if(square != null)
+        {
+            square.SetActive(false);
+        }
         Instantiate(Ability, spawnLocation.position, Quaternion.identity);
     }
 

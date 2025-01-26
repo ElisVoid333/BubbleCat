@@ -346,7 +346,7 @@ public class PlayerController : MonoBehaviour
 
         if (health <= 0)
         {
-            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameController>().PlayerDeath();
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().PlayerDeath();
         }
     }
 
