@@ -623,7 +623,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.97
+  m_Radius: 2.69
 --- !u!1 &2300281072368665432
 GameObject:
   m_ObjectHideFlags: 0
@@ -1817,6 +1817,8 @@ MonoBehaviour:
   dashForce: 100
   dashingTime: 0.5
   dashingCooldown: 0.3
+  upgradedRangedAttack: 0
+  secondRangedAttackTime: 0.3
   bubbleExplosionAbility: 0
   bubbleExplosion: {fileID: 1077458881360635925}
   explodeAttackTime: 2

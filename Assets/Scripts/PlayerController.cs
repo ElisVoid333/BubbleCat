@@ -56,6 +56,8 @@ public class PlayerController : MonoBehaviour
     private bool isDashing;
 
     [Header("Abilities Unlocked")]
+    [SerializeField] private bool upgradedRangedAttack;
+    [SerializeField] private float secondRangedAttackTime;
     [SerializeField] private bool bubbleExplosionAbility;
     [SerializeField] private GameObject bubbleExplosion; 
     [SerializeField] private float explodeAttackTime;
@@ -228,8 +230,8 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(-transform.localScale.x * dashForce, 0f);
         }
-        else 
-        { 
+        else
+        {
             rb.velocity = new Vector2(transform.localScale.x * dashForce, 0f);
         }
 
@@ -276,7 +278,23 @@ public class PlayerController : MonoBehaviour
             newBubble.GetComponent<Rigidbody2D>().AddForce(new Vector2(bubbleForce, 0f));
         }
 
+        if (upgradedRangedAttack)
+        {
+            yield return new WaitForSeconds(secondRangedAttackTime);
+            if (isFlipped)
+            {
+                GameObject newBubble = Instantiate(bubble, new Vector2(this.transform.position.x - bubbleOffSet, this.transform.position.y), Quaternion.identity);
+                newBubble.GetComponent<Rigidbody2D>().AddForce(new Vector2(-bubbleForce, 0f));
+            }
+            else
+            {
+                GameObject newBubble = Instantiate(bubble, new Vector2(this.transform.position.x + bubbleOffSet, this.transform.position.y), Quaternion.identity);
+                newBubble.GetComponent<Rigidbody2D>().AddForce(new Vector2(bubbleForce, 0f));
+            }
+        }
+
         yield return new WaitForSeconds(rangeAttackTime);
+
 
         isAttacking = false;
         canDash = true;
